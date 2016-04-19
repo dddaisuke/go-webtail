@@ -1,0 +1,15 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+<body>
+  <div id="messages"></div>
+<script>
+ws = new WebSocket("ws://log.example.com/follow");
+ws.onmessage = function(e) {
+    $("#messages").append("<p>" + e.data + "</p>");
+    console.log("websock: " + e.data);
+};
+</script>
+</body>
+</html>
